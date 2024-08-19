@@ -1,12 +1,26 @@
-# github-repo-service-app
-Github Repository Service Application
+# GitHub Repository Service
 
-# Read Me First
-The following was discovered as part of building this project:
+## Overview
 
-* The original package name 'com.task.github-repo-service-app' is invalid and this project uses 'com.task.app' instead.
+This is a simple REST service built using Spring Boot and Java (version 21) that retrieves details of a given GitHub repository and caches the response in Redis. The details include:
 
-# Getting Started
+- Full name of the repository
+- Description of the repository
+- Git clone URL
+- Number of stars
+- Date of creation
+
+## Features
+
+- Fetches repository details from GitHub API.
+- Caches the response in Redis for performance.
+- Returns repository details through a REST API endpoint.
+
+## Prerequisites
+
+- Java 21 or higher
+- Maven
+- Redis server
 
 ### Reference Documentation
 For further reference, please consider the following sections:
