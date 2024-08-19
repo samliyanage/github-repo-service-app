@@ -28,7 +28,7 @@ public class GithubSourceRepoServiceImpl implements GithubSourceRepoService{
                 return cachedRepo;
             }
 
-            // Fetch from GitHub API
+            // Else Fetch from GitHub API
             GithubSourceRepoDetails newRepo = githubApiUtil.fetchGithubRepoDetails(owner, repoName);
 
             // Save to Redis cache

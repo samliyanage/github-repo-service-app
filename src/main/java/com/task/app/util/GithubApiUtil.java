@@ -49,7 +49,7 @@ public class GithubApiUtil {
         }
     }
 
-    private GithubSourceRepoDetails parseGitHubResponse(String jsonResponse) throws IOException {
+    protected GithubSourceRepoDetails parseGitHubResponse(String jsonResponse) throws IOException {
         JsonNode jsonNode = new ObjectMapper().readTree(jsonResponse);
 
         GithubSourceRepoDetails repo = new GithubSourceRepoDetails();
