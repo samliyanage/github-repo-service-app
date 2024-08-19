@@ -1,13 +1,13 @@
-package com.task.github_repo_service_app;
+package com.task.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GithubRepoServiceAppApplication {
+public class GithubRepoServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GithubRepoServiceAppApplication.class, args);
+		SpringApplication.run(GithubRepoServiceApplication.class, args);
 	}
 
 }

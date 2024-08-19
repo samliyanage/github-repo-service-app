@@ -4,7 +4,7 @@ Github Repository Service Application
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.task.github-repo-service-app' is invalid and this project uses 'com.task.github_repo_service_app' instead.
+* The original package name 'com.task.github-repo-service-app' is invalid and this project uses 'com.task.app' instead.
 
 # Getting Started
 

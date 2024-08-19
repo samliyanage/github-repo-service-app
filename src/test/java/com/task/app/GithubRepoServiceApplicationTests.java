@@ -1,10 +1,10 @@
-package com.task.github_repo_service_app;
+package com.task.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GithubRepoServiceAppApplicationTests {
+class GithubRepoServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
