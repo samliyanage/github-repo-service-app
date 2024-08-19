@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.task.app.exception.GithubApiFetchFailedException;
 import com.task.app.model.GithubSourceRepoDetails;
+import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 
 @Component
+@Slf4j
 public class GithubApiUtil {
 
     @Value("${github.api.basUri}")
@@ -24,6 +26,8 @@ public class GithubApiUtil {
         Request request = new Request.Builder()
             .url(githubApiBaseUri+"/repos/" + owner + "/" + repoName)
             .build();
+
+        log.info("Executing Endpoint {}", request.url());
 
         try (Response response = httpClient.newCall(request).execute()) {
             if (!response.isSuccessful()) {
@@ -37,10 +41,11 @@ public class GithubApiUtil {
 
             GithubSourceRepoDetails repoDetails = parseGitHubResponse(jsonResponse);
             repoDetails.setCreatedAt(LocalDateTime.now());
-
+            log.info("Fetched repo details {}", repoDetails);
             return repoDetails;
         }catch (Exception e){
-         throw new GithubApiFetchFailedException("Failed to fetch repository details from Github API");
+            log.error("Error Response from Github API {}", e.getMessage());
+            throw new GithubApiFetchFailedException("Failed to fetch repository details from Github API");
         }
     }
 

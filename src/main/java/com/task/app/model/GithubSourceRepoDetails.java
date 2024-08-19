@@ -1,12 +1,11 @@
 package com.task.app.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+
+@Data
 public class GithubSourceRepoDetails {
     private String fullName;
     private String description;

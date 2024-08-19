@@ -36,7 +36,7 @@ public class GithubSourceRepoServiceImpl implements GithubSourceRepoService{
 
             return newRepo;
         }catch (Exception e){
-            throw new GetRepoDetailsFailedException("Unable to get repository details", e);
+            throw new GetRepoDetailsFailedException(e.getMessage());
         }
     }
 
