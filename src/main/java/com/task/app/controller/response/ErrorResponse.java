@@ -10,7 +10,6 @@ public class ErrorResponse{
     private String timestamp;
 
     public ErrorResponse(String message) {
-        this.status = status;
         this.message = message;
         this.timestamp = java.time.LocalDateTime.now().toString();
     }
