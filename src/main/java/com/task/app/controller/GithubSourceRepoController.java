@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("demo/api/v1/repositories")
+@RequestMapping("/repositories")
 public class GithubSourceRepoController {
     @Autowired
     private GithubSourceRepoService service;
