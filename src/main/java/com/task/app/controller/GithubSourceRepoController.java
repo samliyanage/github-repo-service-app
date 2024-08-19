@@ -1,5 +1,6 @@
 package com.task.app.controller;
 
+import com.task.app.controller.response.ErrorResponse;
 import com.task.app.exception.GetRepoDetailsFailedException;
 import com.task.app.model.GithubSourceRepoDetails;
 import com.task.app.service.GithubSourceRepoService;
@@ -17,7 +18,7 @@ public class GithubSourceRepoController {
     private GithubSourceRepoService service;
 
     @GetMapping("/{owner}/{repositoryName}")
-    public ResponseEntity<GithubSourceRepoDetails> getRepositoryDetails(
+    public ResponseEntity<Object> getRepositoryDetails(
             @PathVariable("owner") String owner,
             @PathVariable("repositoryName") String repositoryName) {
 
@@ -25,7 +26,8 @@ public class GithubSourceRepoController {
             GithubSourceRepoDetails repoDetails = service.getRepositoryDetails(owner, repositoryName);
             return ResponseEntity.ok(repoDetails);
         } catch (GetRepoDetailsFailedException e) {
-            return ResponseEntity.status(500).body(null);
+            ErrorResponse errorResponse = new ErrorResponse("Unable to fetch repository details from Github");
+            return ResponseEntity.status(500).body(errorResponse);
         }
     }
 }
